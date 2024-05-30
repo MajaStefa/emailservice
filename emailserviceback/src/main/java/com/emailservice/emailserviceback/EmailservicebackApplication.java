@@ -1,5 +1,8 @@
 package com.emailservice.emailserviceback;
 
+import com.emailservice.emailserviceback.model.EmailUser;
+import com.emailservice.emailserviceback.repo.UserRepo;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -15,6 +18,21 @@ public class EmailservicebackApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EmailservicebackApplication.class, args);
 	}
+
+	@Bean
+	CommandLineRunner run(UserRepo userRepo){
+
+		return args -> {
+			userRepo.save(new EmailUser(null, "ana", "stanic"));
+			userRepo.save(new EmailUser(null, "teodora", "glisic"));
+			userRepo.save(new EmailUser(null, "petar", "repac"));
+			userRepo.save(new EmailUser(null, "vukasin", "stepanovic"));
+
+
+		};
+
+	}
+
 
 	@Bean
 	public CorsFilter corsFilter(){

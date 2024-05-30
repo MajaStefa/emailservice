@@ -30,7 +30,7 @@ export class LoginComponent {
           if(!user){
             this.message="Email not found."
           }else{
-            this.message="Email found."
+            this.router.navigate(['inbox']);
           }
         }
       )
