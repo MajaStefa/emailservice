@@ -1,0 +1,26 @@
+
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+			<div class="login">
+				<div class="login__field">
+                    
+					<input type="text" class="login__input"  placeholder="Email" [(ngModel)]="email">
+				</div>
+				<div class="login__field">
+					
+					<input type="password" class="login__input" placeholder="Password"  [(ngModel)]="password">
+				</div>
+				<button class="button login__submit" (click)="login()">
+					<span class="button__text">LOG IN</span>
+				</button>				
+			</div>
+			
+		</div>
+		<div class="screen__background">
+		
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>
+{{message}}
