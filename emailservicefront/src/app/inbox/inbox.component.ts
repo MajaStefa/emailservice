@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { EmailService } from '../email.service';
+import { Router } from '@angular/router';
+import { Email } from '../models/emails';
 
 @Component({
   selector: 'app-inbox',
@@ -7,4 +10,16 @@ import { Component } from '@angular/core';
 })
 export class InboxComponent {
 
+
+  constructor(private emailService:EmailService, private router:Router){}
+
+  ngOnInit(){
+    this.emailService.getAll().subscribe(
+      (email:Email[])=>{
+        this.emails = email;
+      }
+      
+    );
+  }
+  emails:Email[];
 }

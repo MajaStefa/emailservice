@@ -1,1 +1,21 @@
-<p>inbox works!</p>
+<div>
+    <table>
+      
+        <tr>
+           
+            <td>Sender</td>
+            <td>Reciver</td>
+            <td>Text</td>
+            <td>Time</td>
+        </tr>
+        <tr *ngFor="let e of emails">
+            
+            <td>{{e.sender}}</td>
+            <td>{{e.reciver}}</td>
+            <td>{{e.message}}</td>
+            <td>{{e.timestamp}}</td>
+        </tr>
+        
+    </table>
+    
+</div>

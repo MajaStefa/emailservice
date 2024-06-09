@@ -1,6 +1,8 @@
 package com.emailservice.emailserviceback;
 
+import com.emailservice.emailserviceback.model.Email;
 import com.emailservice.emailserviceback.model.EmailUser;
+import com.emailservice.emailserviceback.repo.EmailRepo;
 import com.emailservice.emailserviceback.repo.UserRepo;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,6 +12,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 
 @SpringBootApplication
@@ -20,13 +23,19 @@ public class EmailservicebackApplication {
 	}
 
 	@Bean
-	CommandLineRunner run(UserRepo userRepo){
+	CommandLineRunner run(UserRepo userRepo, EmailRepo emailRepo){
 
 		return args -> {
 			userRepo.save(new EmailUser(null, "ana", "stanic"));
 			userRepo.save(new EmailUser(null, "teodora", "glisic"));
 			userRepo.save(new EmailUser(null, "petar", "repac"));
 			userRepo.save(new EmailUser(null, "vukasin", "stepanovic"));
+
+			emailRepo.save(new Email(null, "ana", "stanic", "text mejla1",  LocalDateTime.now()));
+			emailRepo.save(new Email(null, "teodora", "glisic","text mejla2",  LocalDateTime.now()));
+			emailRepo.save(new Email(null, "petar", "repac", "text mejla3",  LocalDateTime.now()));
+			emailRepo.save(new Email(null, "vukasin", "stepanovic", "text mejla4",  LocalDateTime.now()));
+
 
 
 		};
