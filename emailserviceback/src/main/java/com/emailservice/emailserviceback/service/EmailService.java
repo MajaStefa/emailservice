@@ -24,6 +24,23 @@ public class EmailService implements EmailServiceInterface {
     }
 
     @Override
+    public Collection<Email> getRecived(String reciver) {
+
+        return emailRepo.findByReciver(reciver);
+    }
+
+    @Override
+    public Collection<Email> getSent(String sender) {
+        return emailRepo.findBySender(sender);
+    }
+
+    @Override
+    public Boolean deleteEmail(Long id) {
+        emailRepo.deleteById(id);
+        return true;
+    }
+
+    @Override
     public Email create(Email email) {
         return emailRepo.save(email);
     }

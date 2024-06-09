@@ -31,10 +31,10 @@ public class EmailservicebackApplication {
 			userRepo.save(new EmailUser(null, "petar", "repac"));
 			userRepo.save(new EmailUser(null, "vukasin", "stepanovic"));
 
-			emailRepo.save(new Email(null, "ana", "stanic", "text mejla1",  LocalDateTime.now()));
-			emailRepo.save(new Email(null, "teodora", "glisic","text mejla2",  LocalDateTime.now()));
-			emailRepo.save(new Email(null, "petar", "repac", "text mejla3",  LocalDateTime.now()));
-			emailRepo.save(new Email(null, "vukasin", "stepanovic", "text mejla4",  LocalDateTime.now()));
+			emailRepo.save(new Email(null, "ana", "petar", "text mejla1",  LocalDateTime.now()));
+			emailRepo.save(new Email(null, "teodora", "petar","text mejla2",  LocalDateTime.now()));
+			emailRepo.save(new Email(null, "petar", "ana", "text mejla3",  LocalDateTime.now()));
+			emailRepo.save(new Email(null, "vukasin", "ana", "text mejla4",  LocalDateTime.now()));
 
 
 
